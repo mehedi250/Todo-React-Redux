@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import { addTodo, deleteTodo } from '../actions';
+import { addTodo, deleteTodo, removeTodo } from '../actions';
 import './todo.css'
 
 function Todo() {
@@ -44,7 +44,7 @@ console.log(list)
 
         </div>
         <p className="p-container">
-          <input type="submit" name="Login" disabled id="go" value="Clear All"/>
+          <button className='clear-btn' onClick={()=>dispatch(removeTodo())}>Clear All</button>
         </p>
       </form>
     </div>
