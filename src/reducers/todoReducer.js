@@ -1,13 +1,12 @@
-import { ADD_TODO } from "../constant"
+import { ADD_TODO, DELETE_TODO } from "../constant"
 
 const initialState = {
     list: []
 }
 
-const todoReduces = (state = initialState, action) =>{
+const todoReducers = (state = initialState, action) =>{
     switch(action.type){
         case ADD_TODO:
-            console.log(action.payload);
             const {id, data} = action.payload;
             return{
                 ...state,
@@ -19,6 +18,12 @@ const todoReduces = (state = initialState, action) =>{
                     }
                 ]
             }
+        case DELETE_TODO:
+            const newList = state.list.filter((item)=> item.id !== action.id)
+            return{
+                ...state,
+                list: newList
+            }
         default:
             return state;
 
@@ -26,4 +31,4 @@ const todoReduces = (state = initialState, action) =>{
 
 }
 
-export default todoReduces;
+export default todoReducers;
