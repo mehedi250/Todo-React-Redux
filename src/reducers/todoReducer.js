@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO } from "../constant"
+import { ADD_TODO, DELETE_TODO, REMOVE_TODO } from "../constant"
 
 const initialState = {
     list: []
@@ -23,6 +23,12 @@ const todoReducers = (state = initialState, action) =>{
             return{
                 ...state,
                 list: newList
+            }
+
+        case REMOVE_TODO:
+            return{
+                ...state,
+                list: []
             }
         default:
             return state;
