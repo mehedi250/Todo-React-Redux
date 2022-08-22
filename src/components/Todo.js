@@ -13,7 +13,7 @@ console.log(list)
   return (
     <>
     <div className="container py-4">
-      <form id="accesspanel"  className='mx-auto'>
+      <form id="accesspanel" onSubmit={e => { e.preventDefault();}} className='mx-auto'>
         <div className="background-wrap">
             <div className="background"></div>
         </div>
